@@ -1,25 +1,10 @@
 from django.shortcuts import render
-
-diaryPosts = [
-    {
-        'author': 'John Cena',
-        'title': 'Diary Post 1',
-        'content': 'First Diary post content',
-        'date_posted': 'October 3, 2023'
-    },
-    {
-        'author': 'Randy Orton',
-        'title': 'Diary Post 2',
-        'content': 'Second Diary post content',
-        'date_posted': 'October 3, 2023'
-    }
-]
-
+from .models import DiaryPost
 
 
 def home(request):
     context = {
-        'diaryPosts': diaryPosts
+        'diaryPosts': DiaryPost.objects.all()
     }
     return render(request, 'diary/home.html', context)
 

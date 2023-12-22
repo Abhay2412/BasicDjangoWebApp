@@ -8,7 +8,7 @@
                 <a class="mr-2" href="#">{{ diaryPost.author }}</a>
                 <small class="text-muted">{{ diaryPost.date_posted|date:"F d, Y" }}</small>
             </div>
-            <h2><a class="article-title" href="#">{{ diaryPost.title }}</a></h2>
+            <h2><a class="article-title" href="{% url 'diaryPost-detail' diaryPost.id %}">{{ diaryPost.title }}</a></h2>
             <p class="article-content">{{ diaryPost.content }}</p>
             </div>
       </article>
